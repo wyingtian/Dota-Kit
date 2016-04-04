@@ -13,7 +13,8 @@ class AddPicUrlToHeroesTable extends Migration
     public function up()
     {
         Schema::table('heroes', function(Blueprint $table){
-            $table->text('pic_url');
+            $table->text('pic_url_sm');
+            $table->text('pic_url_lg');
         });
     }
 
@@ -25,7 +26,8 @@ class AddPicUrlToHeroesTable extends Migration
     public function down()
     {
         Schema::table('heroes',function (Blueprint $table){
-            $table->dropColumn('pic_url');
+            $table->dropColumn('pic_url_sm');
+            $table->dropColumn('pic_url_lg');
         });
     }
 }

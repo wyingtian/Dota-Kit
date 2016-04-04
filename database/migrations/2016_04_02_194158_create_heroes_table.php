@@ -16,7 +16,7 @@ class CreateHeroesTable extends Migration
             $table->increments('id');
             $table->timestamps();
             $table->string('name');
-            $table->string('bio');
+            $table->text('bio');
             $table->string('atk_type');
         });
     }

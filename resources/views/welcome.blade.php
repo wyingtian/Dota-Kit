@@ -1,45 +1,33 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <title>Laravel</title>
+@extends('layouts.master')
+@section('content')
 
-        <link href="https://fonts.googleapis.com/css?family=Lato:100" rel="stylesheet" type="text/css">
+    <div class="col-md-6">
+        <h2>Heroes</h2>
+    <div class="grid-container" style="display:block;">
+        <ul class="rig columns-6">
+            @foreach ($heroes as $hero)
+                <li>
+                <img  data-html="true" data-toggle="tooltip" title="<strong>{{$hero['name']}} </strong> <p>Attack: {{$hero['atk_type']}}</p> " src="{{$hero['pic_url_lg']}}" />
+                {{--<p>{{$hero['name']}}</p>--}}
+                </li>
+            @endforeach
+        </ul>
+    </div>
+    </div>
 
-        <style>
-            html, body {
-                height: 100%;
-            }
 
-            body {
-                margin: 0;
-                padding: 0;
-                width: 100%;
-                display: table;
-                font-weight: 100;
-                font-family: 'Lato';
-            }
-
-            .container {
-                text-align: center;
-                display: table-cell;
-                vertical-align: middle;
-            }
-
-            .content {
-                text-align: center;
-                display: inline-block;
-            }
-
-            .title {
-                font-size: 96px;
-            }
-        </style>
-    </head>
-    <body>
-        <div class="container">
-            <div class="content">
-                <div class="title">Laravel 5</div>
-            </div>
+    <div class="col-md-6">
+        <h2>Items</h2>
+        <div  class="grid-container" style="display:block;">
+            <ul class="rig columns-10">
+    @foreach ($items as $item )
+        <li>
+            <img  data-html="true" data-toggle="tooltip" title="<strong>{{$item['name']}} </strong> <p>Cost: {{$item['cost']}}</p> <p>{{$item['desc']}}</p> " src="{{$item['pic_url']}}" />
+        </li>
+        @endforeach
+            </ul>
         </div>
-    </body>
-</html>
+    </div>
+@stop
+
+

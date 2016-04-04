@@ -26,7 +26,9 @@ class HeroesTableSeeder extends Seeder
             $hero->name = $obj["name"];
             $hero->bio = $obj["bio"];
             $hero->atk_type = $obj["atk"];
-            $hero->pic_url = $hero_pic_url . $hero_name_array[$index] ."_lg.png" ;
+            $hero->pic_url_lg = $hero_pic_url . $hero_name_array[$index] ."_lg.png" ;
+            $hero->pic_url_sm = $hero_pic_url . $hero_name_array[$index] ."_sb.png" ;
+
             $hero->save();
             $index++;
         }
@@ -35,6 +37,7 @@ class HeroesTableSeeder extends Seeder
         $item_json_from_dota_site = file_get_contents("http://www.dota2.com/jsfeed/itemdata");
         $items = json_decode($item_json_from_dota_site,true);
         $item_pic_url = "http://cdn.dota2.com/apps/dota2/images/items/";
+        $index = 0;
         foreach ($items["itemdata"] as $obj) {
             $item = new dota2\Item;
             $item->name = $obj["dname"];
@@ -50,7 +53,10 @@ class HeroesTableSeeder extends Seeder
             $item->qual = $obj["qual"];
            // $item->components = $obj["components"];
             $item->save();
-
+            $index++;
+            if($index == 153){
+                break;
+            }
         }
 
         ################
