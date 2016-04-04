@@ -22,6 +22,17 @@ Route::group(['middleware' => ['web']], function () {
         Route::get('logs', '\Rap2hpoutre\LaravelLogViewer\LogViewerController@index');
     }
 
+    if(App::environment('local')) {
+
+        Route::get('/drop', function() {
+
+            DB::statement('DROP database dota2kit');
+            DB::statement('CREATE database dota2kit');
+
+            return 'Dropped database dota2kit; created database dota2kit.';
+        });
+
+    };
 
     Route::get('/debug', function() {
 

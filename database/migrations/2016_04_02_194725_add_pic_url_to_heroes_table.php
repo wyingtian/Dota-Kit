@@ -13,7 +13,7 @@ class AddPicUrlToHeroesTable extends Migration
     public function up()
     {
         Schema::table('heroes', function(Blueprint $table){
-            $table->string('pic_url');
+            $table->text('pic_url');
         });
     }
 
