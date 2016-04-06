@@ -2,24 +2,36 @@
 @section('content')
 
 
-    <div class="row">
-        <div class="col-md-6">
-            <br>
-            <div id="droppable_hero" class="ui-widget-header">
-                <p>Drop here</p>
+    <form method='POST' action='/build/create'>
+        {{ csrf_field() }}
+
+        <div class="row">
+            <div class="col-md-6">
+                <br>
+                <div id="droppable_hero" class="ui-widget-content">
+                    <p>Drop one Hero here <br><br><br><br></p>
+                </div>
+            </div>
+
+            <input id='build_hero' type='hidden' name='build_hero' >
+
+            <div class="col-md-6">
+                <br>
+                <div id="droppable_item" class="ui-widget-content">
+                    <p>Drop Items here  <br><br><br><br></p>
+                </div>
             </div>
         </div>
+            <input id='build_items' type='hidden' name='build_items' >
+
+        <input type='submit' value='Submit'>
+    </form>
 
 
-    <div class="col-md-6">
-        <br>
-        <div id="droppable_item" class="ui-widget-header">
-            <p>Drop here</p>
-        </div>
-    </div>
 
 
-    </div>
+
+
     <div class="row">
         <div class="col-md-6">
             <h2>Heroes</h2>

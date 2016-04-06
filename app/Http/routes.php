@@ -16,7 +16,7 @@
 Route::group(['middleware' => ['web']], function () {
 
     Route::get('dota2test','dota2Controller@getDota2');
-
+    Route::post('/build/create','dota2Controller@postDota2');
     # Restrict certain routes to only be viewable in the local environments
     if(App::environment('local')) {
         Route::get('logs', '\Rap2hpoutre\LaravelLogViewer\LogViewerController@index');

@@ -18,4 +18,11 @@ class dota2Controller extends Controller
 
         return view('welcome',compact('heroes','items'));
     }
+    public function postDota2(Request $request)
+    {
+
+        $hero = $request->input('build_hero');
+        $items = $request-> input('build_items');
+        return $items;
+    }
 }
