@@ -21,6 +21,7 @@ class AuthController extends Controller
     |
     */
 
+
     use AuthenticatesAndRegistersUsers, ThrottlesLogins;
 
     /**
@@ -28,7 +29,7 @@ class AuthController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/';
+    protected $redirectTo = '/build';
 
     /**
      * Create a new authentication controller instance.

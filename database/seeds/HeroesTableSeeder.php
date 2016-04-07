@@ -59,6 +59,12 @@ class HeroesTableSeeder extends Seeder
             }
         }
 
+        $item = new Dota2\Item;
+        $item->name = "Empty Item";
+        $item->pic_url = "/images/add-sign-item.png";
+        $item->cost = 0;
+        $item->save();
+
         ################
 
     }
