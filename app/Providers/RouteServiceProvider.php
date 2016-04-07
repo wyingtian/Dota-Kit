@@ -1,6 +1,6 @@
 <?php
 
-namespace dota2\Providers;
+namespace Dota2\Providers;
 
 use Illuminate\Routing\Router;
 use Illuminate\Foundation\Support\Providers\RouteServiceProvider as ServiceProvider;
@@ -14,7 +14,7 @@ class RouteServiceProvider extends ServiceProvider
      *
      * @var string
      */
-    protected $namespace = 'dota2\Http\Controllers';
+    protected $namespace = 'Dota2\Http\Controllers';
 
     /**
      * Define your route model bindings, pattern filters, etc.

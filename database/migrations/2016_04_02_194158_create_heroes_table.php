@@ -28,6 +28,6 @@ class CreateHeroesTable extends Migration
      */
     public function down()
     {
-        Schema::dro('heroes');
+        Schema::drop('heroes');
     }
 }

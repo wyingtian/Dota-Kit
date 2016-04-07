@@ -1,13 +1,13 @@
 <?php
 
-namespace dota2\Http\Controllers;
+namespace Dota2\Http\Controllers;
 
-use dota2\Hero;
-use dota2\Item;
+use Dota2\Hero;
+use Dota2\Item;
 use Dota2Api\Api;
 use Dota2Api\Mappers;
 use Illuminate\Http\Request;
-use dota2\Http\Requests;
+use Dota2\Http\Requests;
 
 class dota2Controller extends Controller
 {

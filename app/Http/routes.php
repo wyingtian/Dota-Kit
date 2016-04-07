@@ -14,6 +14,23 @@
 
 
 Route::group(['middleware' => ['web']], function () {
+    Route::get('/','dota2Controller@getDota2');
+
+    Route::controllers([
+        'auth' => 'Auth\AuthController',
+        'password' => 'Auth\PasswordController',
+    ]);
+// Authentication routes...
+    Route::get('auth/login', 'Auth\AuthController@getLogin');
+    Route::post('auth/login', 'Auth\AuthController@postLogin');
+    Route::get('auth/logout', 'Auth\AuthController@getLogout');
+
+// Registration routes...
+    Route::get('auth/register', 'Auth\AuthController@getRegister');
+    Route::post('auth/register', 'Auth\AuthController@postRegister');
+
+
+
 
     Route::get('dota2test','dota2Controller@getDota2');
     Route::post('/build/create','dota2Controller@postDota2');
@@ -69,3 +86,6 @@ Route::group(['middleware' => ['web']], function () {
 
     });
 });
+Route::auth();
+
+Route::get('/home', 'HomeController@index');

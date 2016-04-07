@@ -1,6 +1,6 @@
 <?php
 
-namespace dota2\Http\Requests;
+namespace Dota2\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 

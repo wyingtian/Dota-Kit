@@ -67,7 +67,7 @@ return [
     'providers' => [
         'users' => [
             'driver' => 'eloquent',
-            'model' => dota2\User::class,
+            'model' => Dota2\User::class,
         ],
 
         // 'users' => [

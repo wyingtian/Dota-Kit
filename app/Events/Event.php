@@ -1,6 +1,6 @@
 <?php
 
-namespace dota2\Events;
+namespace Dota2\Events;
 
 abstract class Event
 {

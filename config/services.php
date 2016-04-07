@@ -30,7 +30,7 @@ return [
     ],
 
     'stripe' => [
-        'model' => dota2\User::class,
+        'model' => Dota2\User::class,
         'key' => env('STRIPE_KEY'),
         'secret' => env('STRIPE_SECRET'),
     ],

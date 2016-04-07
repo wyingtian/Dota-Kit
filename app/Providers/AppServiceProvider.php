@@ -1,6 +1,6 @@
 <?php
 
-namespace dota2\Providers;
+namespace Dota2\Providers;
 
 use Illuminate\Support\ServiceProvider;
 

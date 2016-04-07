@@ -1,6 +1,6 @@
 <?php
 
-namespace dota2;
+namespace Dota2;
 
 use Illuminate\Foundation\Auth\User as Authenticatable;
 
@@ -23,4 +23,14 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+    /**
+     * A user can have many builds.
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function builds()
+    {
+        return $this->hasMany('Dota2\Build');
+    }
+
 }

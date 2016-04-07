@@ -28,17 +28,17 @@ $app = new Illuminate\Foundation\Application(
 
 $app->singleton(
     Illuminate\Contracts\Http\Kernel::class,
-    dota2\Http\Kernel::class
+    Dota2\Http\Kernel::class
 );
 
 $app->singleton(
     Illuminate\Contracts\Console\Kernel::class,
-    dota2\Console\Kernel::class
+    Dota2\Console\Kernel::class
 );
 
 $app->singleton(
     Illuminate\Contracts\Debug\ExceptionHandler::class,
-    dota2\Exceptions\Handler::class
+    Dota2\Exceptions\Handler::class
 );
 
 /*

@@ -1,6 +1,6 @@
 <?php
 
-namespace dota2\Providers;
+namespace Dota2\Providers;
 
 use Illuminate\Contracts\Auth\Access\Gate as GateContract;
 use Illuminate\Foundation\Support\Providers\AuthServiceProvider as ServiceProvider;
@@ -13,7 +13,7 @@ class AuthServiceProvider extends ServiceProvider
      * @var array
      */
     protected $policies = [
-        'dota2\Model' => 'dota2\Policies\ModelPolicy',
+        'Dota2\Model' => 'Dota2\Policies\ModelPolicy',
     ];
 
     /**

@@ -1,6 +1,6 @@
 <?php
 
-namespace dota2\Providers;
+namespace Dota2\Providers;
 
 use Illuminate\Contracts\Events\Dispatcher as DispatcherContract;
 use Illuminate\Foundation\Support\Providers\EventServiceProvider as ServiceProvider;
@@ -13,8 +13,8 @@ class EventServiceProvider extends ServiceProvider
      * @var array
      */
     protected $listen = [
-        'dota2\Events\SomeEvent' => [
-            'dota2\Listeners\EventListener',
+        'Dota2\Events\SomeEvent' => [
+            'Dota2\Listeners\EventListener',
         ],
     ];
 

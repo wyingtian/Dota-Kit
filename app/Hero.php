@@ -1,6 +1,6 @@
 <?php
 
-namespace dota2;
+namespace Dota2;
 
 use Illuminate\Database\Eloquent\Model;
 

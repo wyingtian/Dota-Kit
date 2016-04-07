@@ -11,7 +11,7 @@
 |
 */
 
-$factory->define(dota2\User::class, function (Faker\Generator $faker) {
+$factory->define(Dota2\User::class, function (Faker\Generator $faker) {
     return [
         'name' => $faker->name,
         'email' => $faker->safeEmail,

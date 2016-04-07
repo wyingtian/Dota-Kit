@@ -1,6 +1,6 @@
 <?php
 
-namespace dota2\Http\Controllers;
+namespace Dota2\Http\Controllers;
 
 use Illuminate\Foundation\Bus\DispatchesJobs;
 use Illuminate\Routing\Controller as BaseController;

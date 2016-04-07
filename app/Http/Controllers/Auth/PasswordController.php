@@ -1,8 +1,8 @@
 <?php
 
-namespace dota2\Http\Controllers\Auth;
+namespace Dota2\Http\Controllers\Auth;
 
-use dota2\Http\Controllers\Controller;
+use Dota2\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\ResetsPasswords;
 
 class PasswordController extends Controller

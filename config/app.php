@@ -151,10 +151,10 @@ return [
         /*
          * Application Service Providers...
          */
-        dota2\Providers\AppServiceProvider::class,
-        dota2\Providers\AuthServiceProvider::class,
-        dota2\Providers\EventServiceProvider::class,
-        dota2\Providers\RouteServiceProvider::class,
+        Dota2\Providers\AppServiceProvider::class,
+        Dota2\Providers\AuthServiceProvider::class,
+        Dota2\Providers\EventServiceProvider::class,
+        Dota2\Providers\RouteServiceProvider::class,
         /**
          * log viewer service provider
          */

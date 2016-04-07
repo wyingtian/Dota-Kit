@@ -1,6 +1,6 @@
 <?php
 
-namespace dota2\Console;
+namespace Dota2\Console;
 
 use Illuminate\Console\Scheduling\Schedule;
 use Illuminate\Foundation\Console\Kernel as ConsoleKernel;

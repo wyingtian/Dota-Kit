@@ -1,6 +1,6 @@
 <?php
 
-namespace dota2\Http\Middleware;
+namespace Dota2\Http\Middleware;
 
 use Illuminate\Cookie\Middleware\EncryptCookies as BaseEncrypter;
 

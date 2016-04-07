@@ -1,6 +1,6 @@
 <?php
 
-namespace dota2\Exceptions;
+namespace Dota2\Exceptions;
 
 use Exception;
 use Illuminate\Validation\ValidationException;

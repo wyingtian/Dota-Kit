@@ -1,6 +1,6 @@
 <?php
 
-namespace dota2\Http\Middleware;
+namespace Dota2\Http\Middleware;
 
 use Closure;
 use Illuminate\Support\Facades\Auth;

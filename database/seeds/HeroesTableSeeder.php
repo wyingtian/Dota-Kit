@@ -22,7 +22,7 @@ class HeroesTableSeeder extends Seeder
         $heroes = json_decode($hero_json_from_dota_site,true);
         $index = 0;
         foreach ($heroes as $obj) {
-            $hero = new dota2\Hero;
+            $hero = new Dota2\Hero;
             $hero->name = $obj["name"];
             $hero->bio = $obj["bio"];
             $hero->atk_type = $obj["atk"];
@@ -39,7 +39,7 @@ class HeroesTableSeeder extends Seeder
         $item_pic_url = "http://cdn.dota2.com/apps/dota2/images/items/";
         $index = 0;
         foreach ($items["itemdata"] as $obj) {
-            $item = new dota2\Item;
+            $item = new Dota2\Item;
             $item->name = $obj["dname"];
             $item->pic_url = $item_pic_url.$obj['img'];
             $item->qual = $obj["qual"];

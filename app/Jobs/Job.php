@@ -1,6 +1,6 @@
 <?php
 
-namespace dota2\Jobs;
+namespace Dota2\Jobs;
 
 use Illuminate\Bus\Queueable;
 

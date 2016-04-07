@@ -12,17 +12,19 @@ $(function () {
         revert:  function(dropped) {
             var wasJustDropped = dropped && dropped[0].id == "droppable_hero";
             return !wasJustDropped;
-        }
+        },
+
     });
 
     $("#droppable_hero").droppable({
         //Event to accept a draggable when dropped on the droppable
+        accept: '.draggable_hero',
         drop: function (event, ui) {
             //Get the current draggable object
             var currentDraggable = $(ui.draggable).attr('id');
-            if($(ui.draggable).hasClass("draggable_hero")) {
                 $('#build_hero').val(currentDraggable);
-                $(this).addClass("ui-state-highlight").find("p").html(currentDraggable + "<br><br><br><br>");
+                $(this).addClass("ui-state-highlight").find("p").html(currentDraggable);
+
                 //If there is an object prior to the current one
                 if (pastDraggable != "") {
                     //Place past object into its original coordinate
@@ -30,13 +32,13 @@ $(function () {
                 }
                 //Store the current draggable object
                 pastDraggable = currentDraggable;
-            }
         },
         //Event to accept a draggable when dragged outside the droppable
         out: function (event, ui) {
             var currentDraggable = $(ui.draggable).attr('id');
             $(ui.draggable).animate($(ui.draggable).data().originalLocation, "slow");
-        }
+        },
+
     });
 });
 
@@ -60,21 +62,22 @@ $(function () {
         revert:  function(dropped) {
             var wasJustDropped = dropped && dropped[0].id == "droppable_item";
             return !wasJustDropped;
-        }
+        },
+        helper: "clone"
     });
 
     $("#droppable_item").droppable({
+        accept:'.draggable_item',
         //Event to accept a draggable when dropped on the droppable
         drop: function (event, ui) {
+            $(ui.draggable).clone().appendTo($(this));
             //Get the current draggable object
             var currentDraggable = $(ui.draggable).attr('id');
-            if($(ui.draggable).hasClass('draggable_item')) {
                 pastDraggableArray.push(currentDraggable);
                 //Store the current draggable object
                 pastDraggable = currentDraggable;
-                $(this).addClass("ui-state-highlight").find("p").html(pastDraggableArray.length  + "<br><br><br><br>");
+                $(this).addClass("ui-state-highlight").find("p").html(pastDraggableArray.length);
                 $('#build_items').val(pastDraggableArray);
-            }
 
         },
     });

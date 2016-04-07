@@ -22,7 +22,7 @@
             "database"
         ],
         "psr-4": {
-            "dota2\\": "app/"
+            "Dota2\\": "app/"
         }
     },
     "autoload-dev": {
