@@ -22,6 +22,7 @@ Route::group(['middleware' => ['web']], function () {
     Route::get('/home', 'HomeController@index');
     Route::get('/','HeroItemController@getDota2');
     Route::get('/build','BuildController@getDota2');
+    Route::get('/build/show','BuildController@showBuilds');
 
     Route::controllers([
         'auth' => 'Auth\AuthController',

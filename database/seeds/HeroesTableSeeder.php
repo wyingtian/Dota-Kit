@@ -28,7 +28,6 @@ class HeroesTableSeeder extends Seeder
             $hero->atk_type = $obj["atk"];
             $hero->pic_url_lg = $hero_pic_url . $hero_name_array[$index] ."_lg.png" ;
             $hero->pic_url_sm = $hero_pic_url . $hero_name_array[$index] ."_sb.png" ;
-
             $hero->save();
             $index++;
         }

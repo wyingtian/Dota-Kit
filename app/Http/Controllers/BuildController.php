@@ -42,4 +42,13 @@ class BuildController extends Controller
         $build->save();
         return \Auth::user()->id;
     }
+
+    public function showBuilds(){
+        $builds =  \Auth::user()->builds->toArray();
+        $hero = Hero::whereId($builds[2]['hero_id'])->first();
+        $item = Item::whereId($builds[2]['item1_id'])->first();
+
+        //  $builds[0]->hero();
+        return  $item;
+    }
 }

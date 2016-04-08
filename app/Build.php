@@ -17,4 +17,14 @@ class Build extends Model
 
         return $this->belongsTo('Dota2\User');
     }
+
+
+    public function items()
+{
+    return $this->hasMany('Dota2\Item');
+}
+    public function hero()
+    {
+        return $this->hasOne('Dota2\Hero');
+    }
 }
