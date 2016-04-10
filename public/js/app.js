@@ -83,11 +83,18 @@ $(function () {
     });
 });
 
-//If there is an object prior to the current one
-//if (pastDraggableArray.length > 5) {
-//    //Place past object into its original coordinate
-//    $("#" + pastDraggable).animate($("#" + pastDraggable).data().originalLocation, "slow");
-//}else{
-//    $(this).append(ui.draggable);
 
 
+$(function () {
+    $(".droppable_edit_item").droppable({
+        accept:'.draggable_item',
+        //Event to accept a draggable when dropped on the droppable
+        drop: function (event, ui) {
+            $(this).find('img').remove();
+            $(ui.draggable).clone().appendTo($(this));
+            var item_id =$(this).find('img').attr("id")
+            $(this).find("input").val(item_id);
+            $(this).addClass("ui-state-highlight");
+        },
+    });
+});

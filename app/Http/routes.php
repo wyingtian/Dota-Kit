@@ -16,13 +16,32 @@
 Route::group(['middleware' => ['web']], function () {
 
     Route::auth();
+    Route::get('/hero', 'HeroController@index');
+    Route::get('/hero/create', 'HeroController@create');
+    Route::post('/hero', 'HeroController@store');
+    Route::get('/hero/{hero_id}', 'HeroController@show');
+    Route::get('/hero/{hero_id}/edit', 'HeroController@edit');
+    Route::put('/hero/{hero_id}', 'HeroController@update');
+    Route::delete('/hero/{hero_id}', 'HeroController@destroy');
+
+    Route::get('/build', 'BuildController@index');
+    Route::get('/build/create', 'BuildController@create');
+    Route::post('/build', 'BuildController@store');
+    Route::get('/build/{build_id}', 'BuildController@show');
+    Route::get('/build/{build_id}/edit', 'BuildController@edit');
+    Route::post('/build/{build_id}', 'BuildController@update');
+    Route::delete('/build/{build_id}', 'BuildController@destroy');
 
 
-    Route::get('display','HeroItemController@getDota2');
+
+
+    Route::resource('item', 'ItemController');
+    Route::get('/hero/create', 'TagController@create');
+   // Route::get('display','HeroItemController@getDota2');
     Route::get('/home', 'HomeController@index');
     Route::get('/','HeroItemController@getDota2');
-    Route::get('/build','BuildController@getDota2');
-    Route::get('/build/show','BuildController@showBuilds');
+    //Route::get('/build','BuildController@getDota2');
+    //Route::get('/build/show','BuildController@showBuilds');
 
     Route::controllers([
         'auth' => 'Auth\AuthController',

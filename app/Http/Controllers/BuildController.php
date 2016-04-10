@@ -9,46 +9,82 @@ use Dota2Api\Mappers;
 use Illuminate\Http\Request;
 use Dota2\Http\Requests;
 use Dota2\Http\Controllers\Auth;
+
 class BuildController extends Controller
 {
 
+    public function index()
+    {
+        $builds = \Auth::user()->builds->toArray();
+        $builds_count_user = count($builds);
+        return view('builds.index', compact('builds', 'builds_count_user', 'builds_display_all_item'));
+    }
 
-    public function getDota2()
+    public function create()
     {
         $heroes = Hero::all();
         $items = Item::all();
-
-       return view('build',compact('heroes','items'));
+        return view('builds.create', compact('heroes', 'items'));
     }
-    public function postDota2(Request $request)
+
+    public function store(Request $request)
     {
 
-        $hero =substr($request->input('build_hero'),9);
-        $items = explode(",",$request-> input('build_items'));
-        $items_id =[];
-        foreach ($items as $item){
-            array_push($items_id,substr($item,9));
+        $hero = substr($request->input('build_hero'), 9);
+        $items = explode(",", $request->input('build_items'));
+        $items_id = [];
+        if (count($items) != 6) {
+            abort(404);
+        }
+        foreach ($items as $item) {
+            array_push($items_id, substr($item, 9));
         }
         $build = new Build;
-        $build->user_id= \Auth::user()->id;
-        $build->hero_id= $hero;
-        $build->item1_id = 154;
-        $build->item2_id = 154;
-        $build->item3_id = 154;
-        $build->item4_id = 154;
-        $build->item5_id = 154;
-        $build->item6_id = 154;
-
+        $build->user_id = \Auth::user()->id;
+        $build->hero_id = $hero;
+        $build->item1_id = $items_id[0];
+        $build->item2_id = $items_id[1];
+        $build->item3_id = $items_id[2];
+        $build->item4_id = $items_id[3];
+        $build->item5_id = $items_id[4];
+        $build->item6_id = $items_id[5];
         $build->save();
-        return \Auth::user()->id;
+
+        \Session::flash('success_message', 'Your customized build has been created');
+        return redirect('build');
     }
 
-    public function showBuilds(){
-        $builds =  \Auth::user()->builds->toArray();
-        $hero = Hero::whereId($builds[2]['hero_id'])->first();
-        $item = Item::whereId($builds[2]['item1_id'])->first();
 
-        //  $builds[0]->hero();
-        return  $item;
+    public function show($id)
+    {
+        $build = \Auth::user()->builds->find($id);
+        return view('builds.show', compact('build'));
+    }
+
+    public function edit($id)
+    {
+        $heroes = Hero::all();
+        $items = Item::all();
+        $build = \Auth::user()->builds->find($id);
+        return view('builds.edit', compact('build', 'heroes', 'items'));
+    }
+
+    public function update($id, Request $request){
+        $build = \Auth::user()->builds->find($id);
+        $build->item1_id = substr($request->input('edit_item1'),9);
+        $build->item2_id = substr($request->input('edit_item2'),9);
+        $build->item3_id = substr($request->input('edit_item3'),9);
+        $build->item4_id = substr($request->input('edit_item4'),9);
+        $build->item5_id = substr($request->input('edit_item5'),9);
+        $build->item6_id = substr($request->input('edit_item6'),9);
+        $build->save();
+
+        return redirect("build/$id");
+    }
+
+    public function destroy($id){
+        $build = \Auth::user()->builds->find($id);
+        $build->delete();
+        return redirect('build');
     }
 }
