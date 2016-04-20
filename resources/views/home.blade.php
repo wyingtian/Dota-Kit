@@ -1,16 +1,17 @@
-@extends('layouts.app')
+@extends('layouts.master')
 
 @section('content')
-<div class="container">
+    <div class="container">
     <div class="row">
-        <div class="col-md-10 col-md-offset-1">
-            <div class="panel panel-default">
-                <div class="panel-heading">Dashboard</div>
-
-                <div class="panel-body">
-                    You are logged in!
-                </div>
-            </div>
+        <br><br>   <br><br> <br><br>
+        <div class="col-md-6 centered">
+            <img class="img-responsive center" src="images/hero.jpg" alt="hero image">
+            <a href="/hero">See All Heroes</a>
+        </div>
+        <div class="col-md-6 centered">
+            <img class="img-responsive center" src="images/item.jpg" alt="item image">
+            <a href="/item">See All Items</a>
+        </div>
         </div>
     </div>
 </div>

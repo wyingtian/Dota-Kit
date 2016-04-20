@@ -4,24 +4,61 @@ html {
     position: relative;
     min-height: 100%;
 }
-body {
-    margin: 0 0 100px; /* bottom = footer height */
-    background-color: #EAF0F2;
 
+body {
+    /* Location of the image */
+    background-image: url("../images/background.jpg") ;
+
+    /* Image is centered vertically and horizontally at all times */
+    background-position: center center;
+
+    /* Image doesn't repeat */
+    background-repeat: no-repeat;
+
+    /* Makes the image fixed in the viewport so that it doesn't move when
+       the content height is greater than the image height */
+    background-attachment: fixed;
+
+    /* This is what makes the background image rescale based on its container's size */
+    background-size: cover;
+
+    /* Pick a solid background color that will be displayed while the background image is loading */
+    background-color:#464646;
+
+    /* SHORTHAND CSS NOTATION
+     * background: url(background-photo.jpg) center center cover no-repeat fixed;
+     */
 }
+
+/* For mobile devices */
+@media only screen and (max-width: 767px) {
+    body {
+        /* The file size of this background image is 93% smaller
+         * to improve page load speed on mobile internet connections */
+        background-image: url("../images/background.jpg") ;
+    }
+}
+
 footer {
     position: absolute;
     left: 0;
     bottom: 0;
-    height: 100px;
+    height: 10px;
     width: 100%;
 }
-
-
-
-.centered {
-    text-align: center;
-}
+/*.text-thin {*/
+    /*margin-top: 150px;*/
+    /*margin-bottom: 100px;*/
+    /*font-weight: 100;*/
+    /*font-size: 60px;*/
+/*}*/
+/*.centered {*/
+    /*margin-top: 150px;*/
+    /*margin-bottom: 100px;*/
+    /*font-weight: 100;*/
+    /*font-size: 1000px;*/
+    /*!*text-align: center;*!*/
+/*}*/
 /* ----- Image grids ----- */
 ul.rig {
     list-style: none;
@@ -31,12 +68,12 @@ ul.rig {
 ul.rig li {
     display: inline-block;
     /*margin: 0 0 2.5% 2.5%;*/
-    background: #fff;
-    border: 1px solid #ddd;
+    /*background: #fff;*/
+    /*border: 1px solid #ddd;*/
     font-size: 16px;
     font-size: 1rem;
     vertical-align: top;
-    box-shadow: 0 0 0px #ddd;
+    /*box-shadow: 0 0 0px #ddd;*/
     box-sizing: border-box;
     -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
@@ -53,7 +90,7 @@ ul.rig li h5 {
 ul.rig li p {
     font-size: 1.0em;
     line-height: 1.5em;
-    color: white;
+    /*color: white;*/
 }
 /* class for 2 columns */
 ul.rig.columns-2 li {
@@ -65,12 +102,12 @@ ul.rig.columns-3 li {
 }
 /* class for 4 columns */
 ul.rig.columns-6 li {
-    width: 12%; /* this value + 2.5 should = 25% */
+    width: 15%; /* this value + 2.5 should = 25% */
 }
 
 /* class for 4 columns */
 ul.rig.columns-10 li {
-    width: 9%; /* this value + 2.5 should = 25% */
+    width: 10%; /* this value + 2.5 should = 25% */
 }
 
 @media (max-width: 800px) {

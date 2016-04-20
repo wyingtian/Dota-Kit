@@ -1,12 +1,17 @@
 @extends('layouts.master')
 
-@if(Session::has('success_message'))
-    <div class="alert alert-success">{{ Session::get('success_message') }}</div>
-@endif
 
 @section('content')
+    {{ Session::get('message') }}
+    {{--@if(Session::get('message') != null )--}}
+    {{--<div class="alert alert-success">{{ Session::get('message') }}</div>--}}
+    {{--@endif--}}
 
+    <div class="row">
+        <div class="col-md-6 col-md-offset-3">
+            <p>You have {{$builds_count_user}} builds <a href="/build/create">Create your first build</a></p>
     @for ($i = 0; $i < $builds_count_user; $i++)
+        <p>This is your build {{$i + 1}} </p>
         <div>
             <div>
                 <img id="{{Dota2\Hero::find($builds[$i]['hero_id'])->id}}"
@@ -29,12 +34,17 @@
             </div>
 
             <a href="{{action('BuildController@show',[$builds[$i]['id']])}}"> show detail </a><br>
-            <a href="{{action('BuildController@edit',[$builds[$i]['id']])}}"> edit </a>
+            <a href="{{action('BuildController@edit',[$builds[$i]['id']])}}"> edit </a> <br>
+
+            <form method='post' action="/build/delete/{{$builds[$i]['id']}}">
+                {{ csrf_field() }}
+                <input type="submit" value="delete">
+            </form>
 
         </div>
     @endfor
-
-
+        </div>
+    </div>
 
 @stop
 

@@ -23,7 +23,7 @@ $(function () {
             //Get the current draggable object
             var currentDraggable = $(ui.draggable).attr('id');
                 $('#build_hero').val(currentDraggable);
-                $(this).addClass("ui-state-highlight").find("p").html(currentDraggable);
+                $(this).addClass("ui-state-highlight").find("p").html("Hero Chosen");
 
                 //If there is an object prior to the current one
                 if (pastDraggable != "") {
@@ -76,7 +76,8 @@ $(function () {
                 pastDraggableArray.push(currentDraggable);
                 //Store the current draggable object
                 pastDraggable = currentDraggable;
-                $(this).addClass("ui-state-highlight").find("p").html(pastDraggableArray.length);
+            var moreItemNum = 6 - pastDraggableArray.length;
+                $(this).addClass("ui-state-highlight").find("p").html("You need to put " + moreItemNum + " more items");
                 $('#build_items').val(pastDraggableArray);
 
         },
@@ -94,7 +95,7 @@ $(function () {
             $(ui.draggable).clone().appendTo($(this));
             var item_id =$(this).find('img').attr("id")
             $(this).find("input").val(item_id);
-            $(this).addClass("ui-state-highlight");
+            //$(this).addClass("ui-state-highlight");
         },
     });
 });

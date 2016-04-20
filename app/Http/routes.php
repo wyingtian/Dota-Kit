@@ -16,6 +16,10 @@
 Route::group(['middleware' => ['web']], function () {
 
     Route::auth();
+    Route::get('/', function(){
+        return view('home');
+    });
+
     Route::get('/hero', 'HeroController@index');
     Route::get('/hero/create', 'HeroController@create');
     Route::post('/hero', 'HeroController@store');
@@ -30,16 +34,14 @@ Route::group(['middleware' => ['web']], function () {
     Route::get('/build/{build_id}', 'BuildController@show');
     Route::get('/build/{build_id}/edit', 'BuildController@edit');
     Route::post('/build/{build_id}', 'BuildController@update');
-    Route::delete('/build/{build_id}', 'BuildController@destroy');
-
-
+    Route::post('/build/delete/{build_id}', 'BuildController@destroy');
 
 
     Route::resource('item', 'ItemController');
-    Route::get('/hero/create', 'TagController@create');
+  //  Route::get('/hero/create', 'TagController@create');
    // Route::get('display','HeroItemController@getDota2');
-    Route::get('/home', 'HomeController@index');
-    Route::get('/','HeroItemController@getDota2');
+  //  Route::get('/home', 'HomeController@index');
+  //  Route::get('/','HeroItemController@getDota2');
     //Route::get('/build','BuildController@getDota2');
     //Route::get('/build/show','BuildController@showBuilds');
 
@@ -57,10 +59,7 @@ Route::group(['middleware' => ['web']], function () {
     Route::post('auth/register', 'Auth\AuthController@postRegister');
 
 
-
-
-
-    Route::post('/build/create','BuildController@postDota2');
+   // Route::post('/build/create','BuildController@postDota2');
     # Restrict certain routes to only be viewable in the local environments
     if(App::environment('local')) {
         Route::get('logs', '\Rap2hpoutre\LaravelLogViewer\LogViewerController@index');

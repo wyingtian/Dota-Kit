@@ -29,7 +29,12 @@ class BuildController extends Controller
 
     public function store(Request $request)
     {
+        $this->validate($request,[
+            'build_hero' => 'required',
+            'build_items' => 'required| regex:/draggable[0-9]+[^A-Za-z0-9]draggable[0-9]+[^A-Za-z0-9]draggable[0-9]+[^A-Za-z0-9]draggable[0-9]+[^A-Za-z0-9]draggable[0-9]+[^A-Za-z0-9]draggable[0-9]+/',
 
+
+        ]);
         $hero = substr($request->input('build_hero'), 9);
         $items = explode(",", $request->input('build_items'));
         $items_id = [];
@@ -50,7 +55,7 @@ class BuildController extends Controller
         $build->item6_id = $items_id[5];
         $build->save();
 
-        \Session::flash('success_message', 'Your customized build has been created');
+        \Session::flash('message', 'Your customized build has been created');
         return redirect('build');
     }
 

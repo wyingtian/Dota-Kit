@@ -126,6 +126,8 @@ return [
         /*
          * Laravel Framework Service Providers...
          */
+        'Illuminate\Html\HtmlServiceProvider',
+
         Illuminate\Auth\AuthServiceProvider::class,
         Illuminate\Broadcasting\BroadcastServiceProvider::class,
         Illuminate\Bus\BusServiceProvider::class,
@@ -159,6 +161,7 @@ return [
          * log viewer service provider
          */
         Rap2hpoutre\LaravelLogViewer\LaravelLogViewerServiceProvider::class,
+        Barryvdh\Debugbar\ServiceProvider::class,
     ],
 
     /*
@@ -204,7 +207,9 @@ return [
         'URL' => Illuminate\Support\Facades\URL::class,
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
-
+        'Html'      => 'Illuminate\Html\HtmlFacade',
+        'Form'      => 'Illuminate\Html\FormFacade',
+        'Debugbar'  =>  Barryvdh\Debugbar\Facade::class,
     ],
 
 ];
