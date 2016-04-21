@@ -13,10 +13,13 @@
 
 
 
-Route::group(['middleware' => ['web']], function () {
+//Route::group(['middleware' => ['web']], function () {//});
 
     Route::auth();
     Route::get('/', function(){
+        return view('home');
+    });
+    Route::get('/home', function(){
         return view('home');
     });
 
@@ -111,5 +114,5 @@ Route::group(['middleware' => ['web']], function () {
         echo '</pre>';
 
     });
-});
+
 

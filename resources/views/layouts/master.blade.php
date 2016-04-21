@@ -20,6 +20,9 @@
     @yield('head')
 </head>
 <body>
+@if(Session::get('message') != null )
+    <div class="alert alert-success">{{ Session::get('message') }}</div>
+@endif
 <nav class="navbar navbar-default navbar-static-top">
     <div class="container">
         <div class="navbar-header">

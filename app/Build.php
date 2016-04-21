@@ -11,8 +11,6 @@ class Build extends Model
      */
     protected  $table = 'builds';
 
-
-
     public function user(){
 
         return $this->belongsTo('Dota2\User');

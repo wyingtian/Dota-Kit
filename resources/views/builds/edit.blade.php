@@ -1,9 +1,12 @@
 @extends('layouts.master')
 @section('content')
-
     <div class="row">
+        <div class="col-md-10 col-md-offset-4">
+        <Strong>To edit: Drag item from right to left </Strong>
+            <br>
+            <br>
+        </div>
         <div class="col-md-2 col-md-offset-2">
-
             <form method='post' action="{{action('BuildController@update',[$build->id]) }}">
                 {{ csrf_field() }}
                 <div>

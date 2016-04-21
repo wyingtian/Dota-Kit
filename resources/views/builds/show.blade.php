@@ -1,10 +1,10 @@
 @extends('layouts.master')
 @section('content')
-    @if(Session::has('success_message'))
-    <div class="alert alert-success">{{ Session::get('success_message') }}</div>
-    @endif
+
     <div class="row">
         <div class="col-md-6 col-md-offset-3">
+
+
             <div>
 
                 <img id="{{Dota2\Hero::find($build['hero_id'])->id}}"

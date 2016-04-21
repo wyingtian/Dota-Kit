@@ -31,9 +31,7 @@ class BuildController extends Controller
     {
         $this->validate($request,[
             'build_hero' => 'required',
-            'build_items' => 'required| regex:/draggable[0-9]+[^A-Za-z0-9]draggable[0-9]+[^A-Za-z0-9]draggable[0-9]+[^A-Za-z0-9]draggable[0-9]+[^A-Za-z0-9]draggable[0-9]+[^A-Za-z0-9]draggable[0-9]+/',
-
-
+            'build_items' => 'required| regex:/draggable[0-9]+[^A-Za-z0-9]draggable[0-9]+[^A-Za-z0-9]draggable[0-9]+[^A-Za-z0-9]draggable[0-9]+[^A-Za-z0-9]draggable[0-9]+[^A-Za-z0-9]draggable[0-9]+$/',
         ]);
         $hero = substr($request->input('build_hero'), 9);
         $items = explode(",", $request->input('build_items'));
@@ -83,13 +81,14 @@ class BuildController extends Controller
         $build->item5_id = substr($request->input('edit_item5'),9);
         $build->item6_id = substr($request->input('edit_item6'),9);
         $build->save();
-
+        \Session::flash('message', 'The build has been edited');
         return redirect("build/$id");
     }
 
     public function destroy($id){
         $build = \Auth::user()->builds->find($id);
         $build->delete();
+        \Session::flash('message', 'The build has been deleted');
         return redirect('build');
     }
 }

@@ -5,15 +5,15 @@
             {{ csrf_field() }}
 
 
-            <div class="col-md-4 col-md-offset-2">
+            <div class="col-md-2 col-md-offset-2">
                 <br>
                 <div id="droppable_hero" class="ui-widget-content">
-                    <p>Drop one Hero here <br><br><br><br></p>
+                    <p>Drop one Hero here</p>
                 </div>
             </div>
 
             <input id='build_hero' type='hidden' name='build_hero'>
-            <div class="col-md-4 ">
+            <div class=" col-md-6 ">
                 <br>
                 <div id="droppable_item" class="ui-widget-content">
                     <p>Drop Items here <br><br><br><br></p>
@@ -21,7 +21,7 @@
             </div>
             <input id='build_items' type='hidden' name='build_items'>
 
-            <div class="col-md-4 col-md-offset-2">
+            <div class="col-md-4 col-md-offset-4">
                 <br>
                 <input type='submit' value='Submit'>
             </div>
@@ -29,7 +29,8 @@
         </form>
     </div>
     @if ($errors->any())
-        <div class="row">
+        <br>
+        <div class="col-md-offset-2 col-md-8">
             <ul class='alert alert-danger'>
                 @foreach ($errors->all() as $error)
                     <li>{{$error}}</li>
