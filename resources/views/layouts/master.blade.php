@@ -21,7 +21,7 @@
 </head>
 <body>
 @if(Session::get('message') != null )
-    <div class="alert alert-success">{{ Session::get('message') }}</div>
+    <div class="alert alert-success text-center">{{ Session::get('message') }}</div>
 @endif
 <nav class="navbar navbar-default navbar-static-top">
     <div class="container">
