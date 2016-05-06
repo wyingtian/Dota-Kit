@@ -8,7 +8,7 @@
                     @foreach ($items as $item)
                         <li>
                             <a href="{{action('ItemController@show',[$item->id]) }}">
-                                <img data-html="true" data-toggle="tooltip"
+                                <img alt="item image" data-html="true" data-toggle="tooltip"
                                      title="<strong>{{$item['name']}} </strong> <br> <b>Cost: {{$item['cost']}}</b> <b>{{$item['desc']}}</b> "
                                      src="{{$item['pic_url']}}">
                             </a>

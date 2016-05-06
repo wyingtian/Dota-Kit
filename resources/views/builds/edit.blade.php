@@ -4,8 +4,11 @@
 @endsection
 @section('content')
     <div class="row">
-        <div class="col-md-10 col-md-offset-4">
-        <Strong>To edit: Drag item from right to left. Submit when you are done</Strong>
+        <div class="col-md-8 col-md-offset-2 cl-effect-1 ">
+            <a  href="/build">Back</a>
+            <br>
+            <br>
+            <Strong>To edit: Drag item from right to left. Submit when you are done</Strong>
             <br>
             <br>
         </div>
@@ -63,7 +66,7 @@
 
                 </div>
                 <br>
-                <input type='submit' value='Submit'>
+                <input class="button" type='submit' value='Submit'>
             </form>
         </div>
 

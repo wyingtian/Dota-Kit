@@ -16,22 +16,22 @@
                 <div>
                     <div>
                         <img class="center" id="{{Dota2\Hero::find($builds[$i]['hero_id'])->id}}"
-                             src=" {{Dota2\Hero::find($builds[$i]['hero_id'])->pic_url_lg}}" alt="">
+                             src=" {{Dota2\Hero::find($builds[$i]['hero_id'])->pic_url_lg}}" alt="hero image">
                         <br>
                     </div>
                     <div>
                         <img id="{{Dota2\Item::find($builds[$i]['item1_id'])->id}}"
-                             src=" {{Dota2\Item::find($builds[$i]['item1_id'])->pic_url}}" alt="">
+                             src=" {{Dota2\Item::find($builds[$i]['item1_id'])->pic_url}}" alt="item1 image">
                         <img id="{{Dota2\Item::find($builds[$i]['item2_id'])->id}}"
-                             src=" {{Dota2\Item::find($builds[$i]['item2_id'])->pic_url}}" alt="">
+                             src=" {{Dota2\Item::find($builds[$i]['item2_id'])->pic_url}}" alt="item2 image">
                         <img id="{{Dota2\Item::find($builds[$i]['item3_id'])->id}}"
-                             src=" {{Dota2\Item::find($builds[$i]['item3_id'])->pic_url}}" alt="">
+                             src=" {{Dota2\Item::find($builds[$i]['item3_id'])->pic_url}}" alt="item3 image">
                         <img id="{{Dota2\Item::find($builds[$i]['item4_id'])->id}}"
-                             src=" {{Dota2\Item::find($builds[$i]['item4_id'])->pic_url}}" alt="">
+                             src=" {{Dota2\Item::find($builds[$i]['item4_id'])->pic_url}}" alt="item4 image">
                         <img id="{{Dota2\Item::find($builds[$i]['item5_id'])->id}}"
-                             src=" {{Dota2\Item::find($builds[$i]['item5_id'])->pic_url}}" alt="">
+                             src=" {{Dota2\Item::find($builds[$i]['item5_id'])->pic_url}}" alt="item5 image">
                         <img id="{{Dota2\Item::find($builds[$i]['item6_id'])->id}}"
-                             src=" {{Dota2\Item::find($builds[$i]['item6_id'])->pic_url}}" alt="">
+                             src=" {{Dota2\Item::find($builds[$i]['item6_id'])->pic_url}}" alt="item6 image">
                     </div>
                     <div class="cl-effect-1 text-center">
 

@@ -7,7 +7,7 @@
         <div class="col-md-offset-3 col-md-6">
             <br>
             <h2>{{$item['name']}} </h2>
-            <img class="center" src="{{$item['pic_url']}}"> <br>
+            <img class="center" src="{{$item['pic_url']}}" alt="item image"> <br>
 
             <p>Cost: {{$item['cost']}}</p>
             <p>Description: {{$item['desc']}}</p>

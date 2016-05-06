@@ -7,7 +7,7 @@
         <div class="col-md-offset-3 col-md-6">
             <h2>{{$hero['name']}} </h2>
 
-            <img class="center" src="{{$hero['pic_url_lg']}}"> <br>
+            <img class="center" src="{{$hero['pic_url_lg']}}" alt="hero image"> <br>
             <p>Type: {{$hero['atk_type']}} <br>
             Description: {{$hero['bio']}}</p>
         </div>

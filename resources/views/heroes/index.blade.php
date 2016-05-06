@@ -8,7 +8,7 @@
                 <ul class="rig columns-6">
                     @foreach ($heroes as $hero)
                         <li>
-                            <a href="{{action('HeroController@show',[$hero->id]) }}"> <img data-html="true" data-toggle="tooltip"
+                            <a href="{{action('HeroController@show',[$hero->id]) }}"> <img alt="hero image" data-html="true" data-toggle="tooltip"
                                  title="<strong>{{$hero['name']}} </strong> <br><b>Attack: {{$hero['atk_type']}}</b>"
                                  src="{{$hero['pic_url_sm']}}">
                                 </a>
