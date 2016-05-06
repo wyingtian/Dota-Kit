@@ -3,6 +3,7 @@
 @section('content')
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
+            <a  href="/home">Back</a>
             <h2>Heroes</h2>
             <div class="grid-container">
                 <ul class="rig columns-6">

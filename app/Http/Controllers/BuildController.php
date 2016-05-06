@@ -29,7 +29,7 @@ class BuildController extends Controller
 
     public function store(Request $request)
     {
-        $this->validate($request,[
+        $this->validate($request, [
             'build_hero' => 'required',
             'build_items' => 'required| regex:/draggable[0-9]+[^A-Za-z0-9]draggable[0-9]+[^A-Za-z0-9]draggable[0-9]+[^A-Za-z0-9]draggable[0-9]+[^A-Za-z0-9]draggable[0-9]+[^A-Za-z0-9]draggable[0-9]+$/',
         ]);
@@ -72,20 +72,22 @@ class BuildController extends Controller
         return view('builds.edit', compact('build', 'heroes', 'items'));
     }
 
-    public function update($id, Request $request){
+    public function update($id, Request $request)
+    {
         $build = \Auth::user()->builds->find($id);
-        $build->item1_id = substr($request->input('edit_item1'),9);
-        $build->item2_id = substr($request->input('edit_item2'),9);
-        $build->item3_id = substr($request->input('edit_item3'),9);
-        $build->item4_id = substr($request->input('edit_item4'),9);
-        $build->item5_id = substr($request->input('edit_item5'),9);
-        $build->item6_id = substr($request->input('edit_item6'),9);
+        $build->item1_id = substr($request->input('edit_item1'), 9);
+        $build->item2_id = substr($request->input('edit_item2'), 9);
+        $build->item3_id = substr($request->input('edit_item3'), 9);
+        $build->item4_id = substr($request->input('edit_item4'), 9);
+        $build->item5_id = substr($request->input('edit_item5'), 9);
+        $build->item6_id = substr($request->input('edit_item6'), 9);
         $build->save();
         \Session::flash('message', 'The build has been edited');
         return redirect("build/$id");
     }
 
-    public function destroy($id){
+    public function destroy($id)
+    {
         $build = \Auth::user()->builds->find($id);
         $build->delete();
         \Session::flash('message', 'The build has been deleted');

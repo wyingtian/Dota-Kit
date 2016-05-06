@@ -5,6 +5,7 @@
 @section('content')
     <div class="row">
         <div class="col-md-offset-3 col-md-6">
+            <a  href="/item">Back</a>
             <br>
             <h2>{{$item['name']}} </h2>
             <img class="center" src="{{$item['pic_url']}}" alt="item image"> <br>
