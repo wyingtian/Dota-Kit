@@ -2,14 +2,14 @@
 @section('content')
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
-            <h2>Heroes</h2>
-            <div class="grid-container" style="display:block;">
+            <h2>Items</h2>
+            <div class="grid-container">
                 <ul class="rig columns-10">
                     @foreach ($items as $item)
                         <li>
                             <a href="{{action('ItemController@show',[$item->id]) }}">
-                                <img class="draggable_item" id="draggable{{$item['id']}}" id="draggable" data-html="true" data-toggle="tooltip"
-                                     title="<strong>{{$item['name']}} </strong> <p>Cost: {{$item['cost']}}</p> <p>{{$item['desc']}}</p> "
+                                <img data-html="true" data-toggle="tooltip"
+                                     title="<strong>{{$item['name']}} </strong> <br> <b>Cost: {{$item['cost']}}</b> <b>{{$item['desc']}}</b> "
                                      src="{{$item['pic_url']}}">
                             </a>
                         </li>

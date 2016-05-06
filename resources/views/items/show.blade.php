@@ -1,10 +1,14 @@
 @extends('layouts.master')
+@section('head')
+    <link rel="stylesheet" href="/css/hero.css">
+@endsection
 @section('content')
     <div class="row">
-        <div class="col-md-offset-2 col-md-8">
-            <img src="{{$item['pic_url']}}"> <br>
+        <div class="col-md-offset-3 col-md-6">
             <br>
-            <strong>{{$item['name']}} </strong>
+            <h2>{{$item['name']}} </h2>
+            <img class="center" src="{{$item['pic_url']}}"> <br>
+
             <p>Cost: {{$item['cost']}}</p>
             <p>Description: {{$item['desc']}}</p>
             <p>Quality: {{$item['qual']}}</p>

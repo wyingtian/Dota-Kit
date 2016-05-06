@@ -1,8 +1,11 @@
 @extends('layouts.master')
+@section('head')
+    <link rel="stylesheet" href="/css/build.css">
+@endsection
 @section('content')
     <div class="row">
         <div class="col-md-10 col-md-offset-4">
-        <Strong>To edit: Drag item from right to left </Strong>
+        <Strong>To edit: Drag item from right to left. Submit when you are done</Strong>
             <br>
             <br>
         </div>

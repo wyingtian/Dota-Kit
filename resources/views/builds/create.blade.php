@@ -1,14 +1,15 @@
 @extends('layouts.master')
+@section('head')
+    <link rel="stylesheet" href="/css/build.css">
+@endsection
 @section('content')
     <div class="row">
         <form method='POST' action='/build'>
             {{ csrf_field() }}
-
-
-            <div class="col-md-2 col-md-offset-2">
+            <div class="col-md-3 col-md-offset-2">
                 <br>
                 <div id="droppable_hero" class="ui-widget-content">
-                    <p>Drop one Hero here</p>
+                    <p class="drop-box-text">Drop one Hero here</p>
                 </div>
             </div>
 
@@ -16,14 +17,14 @@
             <div class=" col-md-6 ">
                 <br>
                 <div id="droppable_item" class="ui-widget-content">
-                    <p>Drop Items here <br><br><br><br></p>
+                    <p class="drop-box-text">Drop Items here <br><br></p>
                 </div>
             </div>
             <input id='build_items' type='hidden' name='build_items'>
 
             <div class="col-md-4 col-md-offset-4">
                 <br>
-                <input type='submit' value='Submit'>
+                <input class="button" type='submit' value='Submit'>
             </div>
 
         </form>
@@ -40,7 +41,7 @@
     @endif
     <div class="row">
         <div class="col-md-5 col-md-offset-1">
-            <h2>Heroes</h2>
+            <h3>Heroes</h3>
             <div class="grid-container" style="display:block;">
                 <ul class="rig columns-6">
                     @foreach ($heroes as $hero)
@@ -61,7 +62,7 @@
 
 
         <div class="col-md-5">
-            <h2>Items</h2>
+            <h3>Items</h3>
             <div class="grid-container">
                 <ul class="rig columns-10">
                     @foreach ($items as $item )

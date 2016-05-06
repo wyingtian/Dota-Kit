@@ -1,16 +1,14 @@
-
-
 html {
     position: relative;
     min-height: 100%;
 }
 
 body {
-
     font-family: 'Lato', sans-serif;
-
     font-weight: 500;
-    color:violet;
+    color: rgb(51, 122, 183);
+    font-size: 20px;
+
     /* Location of the image */
     background-image: url("../images/background.jpg") ;
 
@@ -35,6 +33,16 @@ body {
      */
 }
 
+.navbar{
+    background-color:lightsteelblue;
+}
+h1 { color: #d54d7b; font-family: "Great Vibes", cursive; font-size: 45px; line-height: 160px; font-weight: normal; margin-bottom: 0px; margin-top: 25px; text-align: center; text-shadow: 0 1px 1px #fff; }
+h2 { color: #d54d7b; font-family: "Great Vibes", cursive; font-size: 35px; line-height: 160px; font-weight: normal; margin-bottom: 0px; margin-top: 5px; text-align: center; text-shadow: 0 1px 1px #fff; }
+
+p { color: #7a7c7f; font-size: 29px; font-family: "Libre Baskerville", serif; line-height: 45px; text-align: center; text-shadow: 0 1px 1px #fff; padding-top: 20px; }
+a { color: deepskyblue; font-size: 24px; margin-top: 20px; text-align: center; text-shadow: 0 1px 1px #fff; }
+
+
 /* For mobile devices */
 @media only screen and (max-width: 767px) {
     body {
@@ -50,21 +58,14 @@ footer {
     bottom: 0;
     height: 10px;
     width: 100%;
+    font-size:15px;
+    color:navajowhite;
 }
-/*.text-thin {*/
-    /*margin-top: 150px;*/
-    /*margin-bottom: 100px;*/
-    /*font-weight: 100;*/
-    /*font-size: 60px;*/
-/*}*/
-/*.centered {*/
-    /*margin-top: 150px;*/
-    /*margin-bottom: 100px;*/
-    /*font-weight: 100;*/
-    /*font-size: 1000px;*/
-    /*!*text-align: center;*!*/
-/*}*/
-/* ----- Image grids ----- */
+
+footer a{
+    color:navajowhite;
+}
+
 ul.rig {
     list-style: none;
     font-size: 0px;

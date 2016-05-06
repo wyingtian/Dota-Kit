@@ -11,11 +11,4 @@ class Hero extends Model
      */
     protected  $table = 'heroes';
 
-    /**
-     * The connection name for the model.
-     *
-     * @var string
-     */
-   // protected $connection = 'dota2kit';
-
 }
