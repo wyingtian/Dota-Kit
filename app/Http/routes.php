@@ -18,14 +18,6 @@
     Route::get('/hero', 'HeroController@index');
     Route::get('/hero/{hero_id}', 'HeroController@show');
 
-    Route::get('/build', 'BuildController@index');
-    Route::get('/build/create', 'BuildController@create');
-    Route::post('/build', 'BuildController@store');
-    Route::get('/build/{build_id}', 'BuildController@show');
-    Route::get('/build/{build_id}/edit', 'BuildController@edit');
-    Route::post('/build/{build_id}', 'BuildController@update');
-    Route::post('/build/delete/{build_id}', 'BuildController@destroy');
-
     Route::resource('item', 'ItemController');
 
     Route::controllers([
@@ -33,7 +25,18 @@
         'password' => 'Auth\PasswordController',
     ]);
 
-    # Restrict certain routes to only be viewable in the local environments
+Route::group(['middleware' => 'auth'], function () {
+    Route::get('/build', 'BuildController@index');
+    Route::get('/build/create', 'BuildController@create');
+    Route::post('/build', 'BuildController@store');
+    Route::get('/build/{build_id}', 'BuildController@show');
+    Route::get('/build/{build_id}/edit', 'BuildController@edit');
+    Route::post('/build/{build_id}', 'BuildController@update');
+    Route::post('/build/delete/{build_id}', 'BuildController@destroy');
+});
+
+
+# Restrict certain routes to only be viewable in the local environments
     # route "debug" code is from class notes
     if(App::environment('local')) {
         Route::get('logs', '\Rap2hpoutre\LaravelLogViewer\LogViewerController@index');
